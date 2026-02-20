@@ -7,11 +7,20 @@ let seguir = true;
 let datos = [];
 
 while(seguir) {
-    let opcion = parseInt(prompt("Escoge una opción del \n 1-Agregar \n 2-Listar \n 3-Salir"));
+    let opcion = parseInt(prompt("Escoge una opción del \n 1-Agregar un contacto \n 2-Listar contactos \n 3-Salir"));
     switch(opcion) {
         case 1:
             alert("Escogiste la opción 1");
             let nombre = prompt("Ingresa tu nombre");
+            let edad = parseInt(prompt("Ingresa tu edad"));
+            let telefono = prompt("Ingresa tu telefono");
+            let id_contacto = datos.length + 1;
+            let agenda = {id_contacto, nombre, edad, telefono};
+            agenda.id_contacto = id_contacto;
+            agenda.nombre = nombre;
+            agenda.edad = edad;
+            agenda.telefono = telefono;
+
             // ingresar el nombre al array
             datos.push(nombre);
             console.table(datos);
